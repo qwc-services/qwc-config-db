@@ -4,6 +4,8 @@ QWC Configuration Database
 Setup database schema for configurations and permissions of QWC services using
 [Alembic](http://alembic.zzzcomputing.com/en/latest/) database migrations.
 
+Shared module for providing SQLAlchemy ORM models for ConfigDB queries.
+
 
 Setup
 -----
@@ -57,6 +59,10 @@ Downgrade one version:
 
 Development
 -----------
+
+Install Python module for PostgreSQL:
+
+    apt-get install python3-psycopg2
 
 Create a virtual environment:
 
