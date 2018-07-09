@@ -45,7 +45,8 @@ class ConfigModels():
         TABLES = [
             'users', 'groups', 'roles',
             'groups_users', 'users_roles', 'groups_roles',
-            'resources', 'permissions'
+            'resources', 'permissions',
+            'last_update'
         ]
 
         def table_selector(table_name, meta_data):
