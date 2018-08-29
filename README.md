@@ -12,7 +12,7 @@ Setup
 
 Uses PostgreSQL connection service `qwc_configdb` (ConfigDB) (cf. `sqlalchemy.url` and `version_table_schema` in `alembic.ini`).
 
-Setup PostgreSQL connection service file `~/.pg_service.conf`:
+Setup PostgreSQL connection service file `pg_service.conf`:
 
 ```
 [qwc_configdb]
@@ -23,6 +23,8 @@ user=qwc_admin
 password=qwc_admin
 sslmode=disable
 ```
+
+Place this file in your home directory, or set the `PGSERVICEFILE` environment variable to point to the file.
 
 Create user according to service `qwc_configdb`:
 
