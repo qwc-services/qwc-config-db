@@ -45,7 +45,7 @@ class ConfigModels():
         TABLES = [
             'users', 'groups', 'roles',
             'groups_users', 'users_roles', 'groups_roles',
-            'resources', 'permissions',
+            'resources', 'resource_types', 'permissions',
             'last_update'
         ]
 
@@ -143,6 +143,12 @@ class ConfigModels():
             foreign_keys=[Resource.parent_id],
             order_by=Resource.name,
             backref=backref('parent', remote_side=[Resource.id])
+        )
+
+        # resource type
+        ResourceType = Base.classes.resource_types
+        Resource.resource_type = relationship(
+            ResourceType
         )
 
         # permission role and resource with singular attribute names
