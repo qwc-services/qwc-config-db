@@ -43,7 +43,7 @@ class ConfigModels():
 
         # Generate required models from ConfigDB using automap
         TABLES = [
-            'users', 'groups', 'roles',
+            'users', 'user_infos', 'groups', 'roles',
             'groups_users', 'users_roles', 'groups_roles',
             'resources', 'resource_types', 'permissions',
             'last_update'
@@ -72,8 +72,16 @@ class ConfigModels():
         self.base = Base
         self.user_model = User
 
+        UserInfo = Base.classes.user_infos
         Group = Base.classes.groups
         Role = Base.classes.roles
+
+        # single user info per user
+        User.user_info = relationship(
+            UserInfo,
+            uselist=False,
+            back_populates="user"
+        )
 
         # sorted user groups
         User.sorted_groups = relationship(
