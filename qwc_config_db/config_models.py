@@ -46,6 +46,7 @@ class ConfigModels():
             'users', 'user_infos', 'groups', 'roles',
             'groups_users', 'users_roles', 'groups_roles',
             'resources', 'resource_types', 'permissions',
+            'registrable_groups', 'registration_requests',
             'last_update'
         ]
 
@@ -166,4 +167,20 @@ class ConfigModels():
         )
         Permission.resource = relationship(
             Resource
+        )
+
+        # group for registrable group with singular attribute name
+        RegistrableGroup = Base.classes.registrable_groups
+        RegistrableGroup.group = relationship(
+            Group
+        )
+
+        # user and registrable group for registration request with
+        # singular attribute names
+        RegistrationRequest = Base.classes.registration_requests
+        RegistrationRequest.user = relationship(
+            User
+        )
+        RegistrationRequest.registrable_group = relationship(
+            RegistrableGroup
         )
