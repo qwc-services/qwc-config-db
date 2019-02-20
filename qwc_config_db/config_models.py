@@ -184,3 +184,10 @@ class ConfigModels():
         RegistrationRequest.registrable_group = relationship(
             RegistrableGroup
         )
+
+        # user registration requests
+        User.registration_requests = relationship(
+            RegistrationRequest,
+            # destroy registration requests on user delete
+            cascade="save-update, merge, delete"
+        )
