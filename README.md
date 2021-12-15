@@ -6,6 +6,7 @@ Setup database schema for configurations and permissions of QWC services using
 
 Shared module for providing SQLAlchemy ORM models for ConfigDB queries.
 
+![er-diagram](er-diagram.png)
 
 Setup
 -----
