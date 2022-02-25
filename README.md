@@ -1,10 +1,11 @@
+[![CI](https://github.com/qwc-services/qwc-config-db/actions/workflows/qwc-config-db.yml/badge.svg)](https://github.com/qwc-services/qwc-config-db/actions)
+[![docker](https://img.shields.io/docker/v/sourcepole/qwc-config-db?label=qwc-config-db%20image&sort=semver)](https://hub.docker.com/r/sourcepole/qwc-config-db)
+
 QWC Configuration Database
 ==========================
 
 Setup database schema for configurations and permissions of QWC services using
-[Alembic](http://alembic.zzzcomputing.com/en/latest/) database migrations.
-
-Shared module for providing SQLAlchemy ORM models for ConfigDB queries.
+[Alembic](https://alembic.sqlalchemy.org/) database migrations.
 
 ![er-diagram](er-diagram.png)
 
@@ -58,6 +59,14 @@ Upgrade one version:
 Downgrade one version:
 
     alembic downgrade -1
+
+
+Run from Docker container
+-------------------------
+
+    docker run -it sourcepole/qwc-config-db
+
+    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db setup-config-schema.sh
 
 
 Development
