@@ -66,7 +66,7 @@ Run from Docker container
 
     docker run -it sourcepole/qwc-config-db
 
-    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db setup-config-schema.sh
+    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db setup-qwc_config-schema.sh
 
 
 Development
