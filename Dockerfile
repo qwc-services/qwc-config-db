@@ -13,4 +13,6 @@ RUN \
 COPY *.sh /usr/local/bin/
 COPY pg_service_demo.conf /root/.pg_service.conf
 
-ENTRYPOINT /bin/bash
+CMD /bin/bash
+
+ENV PGSERVICE=qwc_configdb

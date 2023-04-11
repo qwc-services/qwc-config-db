@@ -68,6 +68,13 @@ Run from Docker container
 
     docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db setup-qwc_config-schema.sh
 
+    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db alembic upgrade head
+
+Create SQL DB dump:
+
+    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db pg_dumpall --globals-only
+    docker run -it -v pg_service.conf:/root/.pg_service.conf:ro sourcepole/qwc-config-db pg_dump --create
+
 
 Development
 -----------
