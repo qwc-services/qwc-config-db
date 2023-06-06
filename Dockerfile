@@ -3,7 +3,7 @@ FROM alpine:3.15
 WORKDIR /srv/qwc_service
 ADD . .
 
-# postgresql-dev g++ python3-dev: Required for psycopg2-binary
+# postgresql-dev g++ python3-dev: Required for psycopg2
 RUN \
     apk add --no-cache --update --virtual runtime-deps bash python3 py3-pip postgresql-client && \
     apk add --no-cache --update --virtual build-deps postgresql-dev g++ python3-dev && \
