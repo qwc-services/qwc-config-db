@@ -95,6 +95,10 @@ Activate virtual environment:
 
     source .venv/bin/activate
 
+Install postgres headers needed to build psycopg2 (part of requirements.txt below):
+
+    apt-get install libpq-dev
+    
 Install requirements:
 
     pip install -r requirements.txt
